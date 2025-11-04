@@ -3,7 +3,7 @@ name: Build container image
 on:
   repository_dispatch:
     types:
-      -build
+      - build
   pull_request:
     branches:
       - main
