@@ -8,6 +8,7 @@ apt-get update -y
 # Install GNOME Desktop
 apt-get install -y \
   gnome-core \
+  gnome-initial-setup \
   ptyxis
 
 # Remove unwanted bits of GNOME Core
