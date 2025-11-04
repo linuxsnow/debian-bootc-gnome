@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -ouex pipefail
+
+# Initial update
+apt-get update -y
