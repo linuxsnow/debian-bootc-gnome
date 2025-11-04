@@ -4,3 +4,7 @@ set -ouex pipefail
 
 # Initial update
 apt-get update -y
+
+# Install GNOME Desktop
+apt-get install -y \
+  task-gnome-desktop
