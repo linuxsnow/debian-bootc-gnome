@@ -7,4 +7,4 @@ apt-get update -y
 
 # Install GNOME Desktop
 apt-get install -y \
-  task-gnome-desktop -libostree
+  task-gnome-desktop libostree-
