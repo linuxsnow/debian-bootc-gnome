@@ -28,6 +28,7 @@ apt purge -y \
   gnome-contacts \
   gnome-font-viewer \
   gnome-maps \
+  gnome-shell-extension-manager \
   gnome-software \
   gnome-system-monitor \
   gnome-text-editor \
