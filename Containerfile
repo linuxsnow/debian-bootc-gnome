@@ -3,7 +3,7 @@ FROM scratch AS ctx
 COPY build_files /
 
 # Base Image
-FROM ghcr.io/linuxsnow/debian-bootc-core:latest
+FROM ghcr.io/frostyard/debian-bootc-core:latest
 
 COPY system_files /
 
