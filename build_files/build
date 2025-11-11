@@ -2,8 +2,24 @@
 
 set -ouex pipefail
 
+# Repository setup
+sed -i 's/main/main contrib non-free non-free-firmware/' /etc/apt/sources.list.d/*
+
+
 # Initial update
 apt-get update -y
+
+# Install Plymouth for boot splash
+apt-get install -y \
+	plymouth \
+	plymouth-themes \
+	plymouth-label
+
+# install firmware packages
+apt-get install -y \
+  firmware-linux \
+  firmware-linux-nonfree \
+  firmware-misc-nonfree \
 
 # Install GNOME Desktop
 apt-get install -y \
@@ -39,3 +55,8 @@ apt purge -y \
   yelp
 
 apt list --installed > /usr/share/snow/desktop-packages.after-cleanup.txt
+
+# Build Initramfs
+KERNEL_VERSION="$(basename "$(find /usr/lib/modules -maxdepth 1 -type d | grep -v -E "*.img" | tail -n 1)")"
+dracut --force --no-hostonly --reproducible --zstd --verbose \
+	--kver "$KERNEL_VERSION" "/usr/lib/modules/$KERNEL_VERSION/initramfs.img"

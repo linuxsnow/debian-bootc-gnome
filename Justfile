@@ -45,7 +45,8 @@ generate-bootable-image $base_dir=base_dir $filesystem=filesystem:
             --filesystem "{{ filesystem }}" \
             --target-imgref {{ image_repo }}/{{ image_name }}:{{ image_tag }} \
             --wipe \
-            --bootloader systemd
+            --bootloader systemd \
+            --karg "splash"
 
 bootable-image-from-ghcr $base_dir=base_dir $filesystem=filesystem:
     #!/usr/bin/env bash
@@ -60,7 +61,9 @@ bootable-image-from-ghcr $base_dir=base_dir $filesystem=filesystem:
             --source-imgref docker://{{ image_repo }}/{{ image_name }}:{{ image_tag }} \
             --target-imgref {{ image_repo }}/{{ image_name }}:{{ image_tag }} \
             --wipe \
-            --bootloader systemd
+            --bootloader systemd \
+            --karg "splash"
+
 launch-incus:
     #!/usr/bin/env bash
     image_file={{ base_dir }}/{{ image_name }}.img
