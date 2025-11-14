@@ -20,6 +20,7 @@ apt-get install -y \
   firmware-linux \
   firmware-linux-nonfree \
   firmware-misc-nonfree \
+  firmware-iwlwifi
 
 # Install GNOME Desktop
 apt-get install -y \
