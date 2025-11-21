@@ -61,6 +61,7 @@ apt-get install -y \
 	gnome-initial-setup \
 	tuned \
 	tuned-ppd \
+	switcheroo-control \
 	ptyxis \
 	pipewire \
 	dbus-broker
