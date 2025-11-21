@@ -18,7 +18,6 @@ apt-get install -y \
 echo "firmware-ipw2x00 firmware-ipw2x00/license/accepted boolean true" | debconf-set-selections
 echo "firmware-ivtv firmware-ivtv/license/accepted boolean true" | debconf-set-selections
 apt-get install -y \
-	dracut \
 	atmel-firmware \
 	bluez-firmware \
 	dahdi-firmware-nonfree \
