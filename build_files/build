@@ -66,10 +66,11 @@ apt-get install -y \
 	dbus-broker
 
 mkdir -p /usr/share/snow
-apt list --installed > /usr/share/snow/desktop-packages.txt
 
 # Remove unwanted bits of GNOME Core
 apt purge -y \
+	baobab \
+	evince \
 	evolution \
 	firefox-esr \
 	gnome-calculator \
@@ -79,6 +80,7 @@ apt purge -y \
 	gnome-connections \
 	gnome-contacts \
 	gnome-font-viewer \
+	gnome-logs \
 	gnome-maps \
 	gnome-shell-extension-manager \
 	gnome-software \
@@ -89,9 +91,9 @@ apt purge -y \
 	loupe \
 	papers \
 	totem \
-	yelp
+	yelp 
 
-apt list --installed > /usr/share/snow/desktop-packages.after-cleanup.txt
+apt list --installed > /usr/share/snow/desktop-packages.txt
 
 # Update build information in os-release
 sed -i "s/^BUILD_ID=.*/BUILD_ID=\"$BUILD_ID\"/" /usr/lib/os-release
