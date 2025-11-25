@@ -63,7 +63,9 @@ apt-get install -y \
 	switcheroo-control \
 	ptyxis \
 	pipewire \
-	dbus-broker
+	dbus-broker \
+	mesa-va-drivers \
+	intel-media-va-driver-non-free
 
 mkdir -p /usr/share/snow
 
