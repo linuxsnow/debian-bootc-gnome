@@ -71,6 +71,7 @@ mkdir -p /usr/share/snow
 
 # Remove unwanted bits of GNOME Core
 apt purge -y \
+	gnome-session-xsession \
 	baobab \
 	evince \
 	evolution \
