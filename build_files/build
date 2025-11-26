@@ -67,8 +67,6 @@ apt-get install -y \
 	mesa-va-drivers \
 	intel-media-va-driver-non-free
 
-mkdir -p /usr/share/snow
-
 # Remove unwanted bits of GNOME Core
 apt purge -y \
 	gnome-session-xsession \
@@ -96,6 +94,8 @@ apt purge -y \
 	totem \
 	yelp
 
+# Get package list
+mkdir -p /usr/share/snow
 apt list --installed > /usr/share/snow/desktop-packages.txt
 
 # Update build information in os-release
