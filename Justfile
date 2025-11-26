@@ -3,6 +3,7 @@ set dotenv-load := true
 image_name := env("BUILD_IMAGE_NAME", "debian-bootc-gnome")
 image_repo := env("BUILD_IMAGE_REPO", "ghcr.io/frostyard")
 image_tag := env("BUILD_IMAGE_TAG", "latest")
+base_image_name := env("BUILD_BASE_IMAGE_NAME", "debian-bootc-core")
 base_dir := env("BUILD_BASE_DIR", ".")
 filesystem := env("BUILD_FILESYSTEM", "ext4")
 selinux := path_exists('/sys/fs/selinux')
@@ -11,6 +12,7 @@ default:
     just --list --unsorted
 
 build-container $image_name=image_name:
+    sudo podman pull "{{ image_repo }}/{{ base_image_name }}:latest" || true
     sudo podman build -t "{{ image_name }}:{{ image_tag }}" .
 
 run-container $image_name=image_name:
