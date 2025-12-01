@@ -84,10 +84,12 @@ apt purge -y \
 	gnome-logs \
 	gnome-maps \
 	gnome-shell-extension-manager \
+	gnome-snapshot \
 	gnome-software \
 	gnome-system-monitor \
 	gnome-text-editor \
 	gnome-weather \
+	nm-connection-editor \
 	simple-scan \
 	loupe \
 	papers \
