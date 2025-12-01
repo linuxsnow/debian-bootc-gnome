@@ -67,6 +67,9 @@ apt-get install -y \
 	mesa-va-drivers \
 	intel-media-va-driver-non-free
 
+apt-get install -y \
+	shim-signed
+
 # Remove unwanted bits of GNOME Core
 apt purge -y \
 	gnome-session-xsession \
